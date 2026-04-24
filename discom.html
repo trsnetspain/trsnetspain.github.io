@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRS NET</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #000;
+        color: white;
+        overflow-x: hidden;
+      }
+      .gradient-bottom {
+        background: linear-gradient(to top, #d83b00 0%, transparent 70%);
+        filter: blur(5px);
+      }
+      .floating {
+        animation: float 8s ease-in-out infinite alternate;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-30px); }
+      }
+      .gradient-bg {
+        background: radial-gradient(
+          600px circle at 50% 100%,
+          rgba(255, 60, 0, 0.3),
+          transparent 70%
+        ),
+        radial-gradient(
+          400px circle at 80% 20%,
+          rgba(0, 140, 255, 0.2),
+          transparent 80%
+        ),
+        radial-gradient(
+          500px circle at 20% 40%,
+          rgba(255, 153, 0, 0.1),
+          transparent 80%
+        );
+        filter: blur(100px);
+      }
+
+      .outer-cont {
+        padding: 12px 20px;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        position: relative;
+        background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
+        border-radius: 12px;
+        color: #fff;
+        transition: all 0.3s ease;
+        box-shadow:
+          inset 0px 0px 5px #ffffffa9,
+          inset 0px 35px 30px #000,
+          0px 5px 10px #000000cc;
+        text-shadow: 1px 1px 1px #000;
+      }
+      .outer-cont::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: 12px;
+        filter: blur(0);
+        z-index: -1;
+        box-shadow: none;
+        background: conic-gradient(
+          #00000000 80deg,
+          #40baf7,
+          #f34ad7,
+          #5bfcc4,
+          #00000000 280deg
+        );
+        transition: all 0.3s ease;
+      }
+      .outer-cont:hover::before {
+        filter: blur(15px);
+      }
+      .outer-cont:active::before {
+        filter: blur(5px);
+        transform: translateY(1px);
+      }
+      .outer-cont:active {
+        box-shadow:
+          inset 0px 0px 5px #ffffffa9,
+          inset 0px 35px 30px #000;
+        margin-top: 3px;
+      }
+      button:hover {
+        transform: translate(5px, -5px);
+      }
+      button a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+
+  <body class="relative overflow-x-hidden">
+    <!-- Background gradients -->
+    <div class="gradient-bg absolute inset-0 -z-10 floating"></div>
+    <div class="gradient-bottom absolute bottom-0 left-0 w-full h-64 -z-10"></div>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="fixed top-0 w-full flex justify-between items-center px-10 py-5 bg-black/30 backdrop-blur-md border-b border-white/10 z-50">
+      <div class="flex items-center gap-3">
+        <img src="TRS.svg" alt="TRS NET Logo" class="w-20 h-20 object-contain" />
+        <span class="text-white text-xl font-bold">TRS NET</span>
+      </div>
+      <nav class="flex items-center gap-8">
+        <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
+        <a href="nodos.html" class="text-gray-400 hover:text-white transition">Nodos</a>
+        <a href="discom.html" class="text-gray-400 hover:text-white transition">Dispositivos Compatibles</a>
+        <a href="lora.html" class="text-gray-400 hover:text-white transition">LoRa</a>
+      </nav>
+    </header>
+
+    <!-- ================= HERO + COMPRA VISIBLE ================= -->
+    <section class="flex flex-col justify-center items-center text-center min-h-screen px-6 pt-32 gap-10">
+      <!-- Contenedor productos en fila -->
+      <div class="flex flex-wrap justify-center gap-6 w-full max-w-6xl">
+        <!-- Producto 1 -->
+        <div class="w-full sm:w-80 bg-black/80 border border-white/10 rounded-xl p-6 shadow-lg">
+          <img src="https://heltec.org/wp-content/uploads/2023/09/2.png" alt="Producto Premium" class="w-full h-56 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-bold text-white mb-2">WiFi LoRa 32(V3), ESP32S3 + SX1262</h3>
+          <p class="text-gray-400 mb-4">
+            Compatible con Meshtastic y LoRaWAN.
+          </p>
+          <p class="text-orange-400 font-bold text-xl mb-6">$17.90 – $19.90</p>
+          <button class="outer-cont w-full">
+            <a href="https://heltec.org/project/wifi-lora-32-v3/" target="_blank" rel="noopener noreferrer">
+              Comprar en Heltec
+            </a>
+          </button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="w-full sm:w-80 bg-black/80 border border-white/10 rounded-xl p-6 shadow-lg">
+          <img src="https://heltec.org/wp-content/uploads/2024/08/9-1.png" alt="Producto Premium" class="w-full h-56 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-bold text-white mb-2">Mesh Node T114 (Rev. 2.0), nRF52840 + SX1262 LoRa Node +GPS, </h3>
+          <p class="text-gray-400 mb-4">
+            .
+          </p>
+          <p class="text-orange-400 font-bold text-xl mb-6">$17.90 – $33.70</p>
+          <button class="outer-cont w-full">
+            <a href="https://heltec.org/project/mesh-node-t114//" target="_blank" rel="noopener noreferrer">
+              Comprar en Heltec
+            </a>
+          </button>
+        </div>
+
+        <!-- Producto 3 (opcional, ejemplo) -->
+        <div class="w-full sm:w-80 bg-black/80 border border-white/10 rounded-xl p-6 shadow-lg">
+          <img src="https://heltec.org/wp-content/uploads/2023/10/6502_gps.png" alt="Producto Premium" class="w-full h-56 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-bold text-white mb-2">CubeCell GPS-6502 (HTCC-AB02S)</h3>
+          <p class="text-gray-400 mb-4">
+            Compatible con Meshtastic y LoRaWAN.
+          </p>
+          <p class="text-orange-400 font-bold text-xl mb-6">$25.80 – $25.90</p>
+          <button class="outer-cont w-full">
+            <a href="https://heltec.org/project/htcc-ab02s/" target="_blank" rel="noopener noreferrer">
+              Comprar en Heltec
+            </a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-neutral-800 py-10 px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm bg-black">
+      <p>&copy; TRS NET. All rights reserved.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Status</a>
+      </div>
+    </footer>
+  </body>
+</html>

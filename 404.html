@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡CABLE SECCIONADO! | TRS NET</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap');
+
+        body {
+            background-color: #080808;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Animación del cable colgando */
+        @keyframes swing {
+            0% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+            100% { transform: rotate(-3deg); }
+        }
+
+        .wire-container {
+            animation: swing 4s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        /* Chispas del cortocircuito */
+        @keyframes spark {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            5%, 15% { opacity: 1; transform: scale(1); }
+            20% { opacity: 0; transform: scale(1.5); }
+        }
+
+        .spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #f97316;
+            border-radius: 50%;
+            filter: blur(1px);
+            box-shadow: 0 0 10px #f97316, 0 0 20px #f97316;
+        }
+
+        /* Efecto de parpadeo de pantalla (cortocircuito) */
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.7; filter: contrast(150%) brightness(1.2); }
+        }
+
+        .flicker-overlay {
+            animation: flicker 5s infinite;
+        }
+
+        .glitch-text {
+            font-family: 'Syncopate', sans-serif;
+            text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen">
+
+    <div class="flicker-overlay absolute inset-0 pointer-events-none"></div>
+
+    <div class="wire-container relative mb-12">
+        <div class="w-2 h-32 bg-zinc-800 mx-auto rounded-b-full shadow-lg relative">
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-zinc-700 rounded-full"></div>
+        </div>
+        
+        <div class="text-8xl mt-[-20px] relative z-10">
+            🦦 <div class="absolute -bottom-2 -right-4 text-2xl rotate-12">⚡</div>
+        </div>
+
+        <div class="mt-[-10px] flex justify-center gap-1">
+            <div class="w-1 h-8 bg-orange-500 rounded-full blur-[1px] animate-pulse"></div>
+            <div class="w-1 h-6 bg-blue-400 rounded-full blur-[1px] animate-bounce"></div>
+        </div>
+
+        <div id="spark-container" class="absolute bottom-0 left-1/2 w-full h-full"></div>
+    </div>
+
+    <div class="text-center px-6">
+        <h1 class="glitch-text text-6xl md:text-8xl font-black text-orange-500 mb-4">404</h1>
+        <h2 class="text-xl md:text-2xl font-bold uppercase tracking-widest mb-2">Conexión interrumpida</h2>
+        <p class="text-zinc-500 max-w-md mx-auto mb-8">
+            Parece que nuestra mascota digital ha confundido el cable de datos con un snack. 
+            Estamos intentando sobornarlo con gigas extra para que lo suelte.
+        </p>
+
+        <a href="https://trsnetspain/web/" class="group relative inline-block px-8 py-3 font-bold text-orange-500 border-2 border-orange-500 hover:bg-orange-500 hover:text-black transition-all duration-300 rounded-lg">
+            REPARAR CONEXIÓN (INICIO)
+            <div class="absolute -inset-1 bg-orange-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </a>
+    </div>
+
+    <script>
+        // Crear chispas aleatorias
+        const container = document.getElementById('spark-container');
+        
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            
+            // Posición aleatoria cerca de la punta del cable
+            const x = (Math.random() - 0.5) * 40;
+            const y = Math.random() * 20;
+            
+            spark.style.left = `${x}px`;
+            spark.style.top = `${y}px`;
+            spark.style.animation = `spark ${0.2 + Math.random() * 0.3}s linear forwards`;
+            
+            container.appendChild(spark);
+            
+            setTimeout(() => {
+                spark.remove();
+            }, 500);
+        }
+
+        // Intervalo de chispas irregular para que parezca real
+        setInterval(() => {
+            if (Math.random() > 0.4) {
+                createSpark();
+                if (Math.random() > 0.8) createSpark(); // Ráfaga doble
+            }
+        }, 150);
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACCESO RED TRS1 | TRSNET</title>
+    <link rel="icon" type="image/svg+xml" href="TRS.svg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #000;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Tus degradados TRSNET */
+        .gradient-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px circle at 50% 100%, rgba(255, 60, 0, 0.25), transparent 70%),
+                        radial-gradient(400px circle at 80% 20%, rgba(0, 140, 255, 0.15), transparent 80%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        /* Forzamos el estilo Naranja/Negro en Firebase */
+        .firebaseui-container { background-color: transparent !important; box-shadow: none !important; }
+        .firebaseui-idp-button {
+            background-color: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 20px !important;
+            height: 55px !important;
+            transition: all 0.3s ease !important;
+        }
+        .firebaseui-idp-button:hover {
+            background-color: rgba(255, 255, 255, 0.08) !important;
+            border-color: #f97316 !important;
+            transform: scale(1.02);
+        }
+        .firebaseui-idp-text { color: white !important; font-weight: 700 !important; text-transform: uppercase; letter-spacing: 0.5px; }
+        .firebaseui-title, .firebaseui-tos, .firebaseui-pp { display: none !important; }
+    </style>
+</head>
+<body class="relative">
+
+    <div class="gradient-bg"></div>
+
+    <main class="relative z-10 w-full max-w-[420px] px-6">
+        <div class="bg-black/40 backdrop-blur-3xl border border-white/10 rounded-[2.8rem] p-10 shadow-2xl text-center">
+            
+            <div id="auth-wrapper">
+                <div class="inline-block px-4 py-1 mb-6 rounded-full border border-orange-500/20 bg-orange-500/5">
+                    <span class="text-orange-500 text-[9px] font-black tracking-[0.2em] uppercase animate-pulse">SISTEMA TRSNETAD ACTIVO</span>
+                </div>
+
+                <h1 class="text-5xl font-black text-white tracking-tighter mb-4 leading-none uppercase">
+                    Login <br><span class="text-orange-500 italic">Red TRS1</span>
+                </h1>
+                <p class="text-gray-500 text-xs mb-10 font-medium">Terminal de autenticación centralizada.</p>
+
+                <div id="firebaseui-auth-container"></div>
+            </div>
+
+            <div id="login-info" class="hidden">
+                <div class="w-20 h-20 bg-orange-500 rounded-3xl mx-auto flex items-center justify-center font-black text-black text-3xl shadow-[0_0_30px_rgba(249,115,22,0.4)] mb-6">
+                    <img src="TRS.svg" class="w-10 h-10 invert" alt="">
+                </div>
+                <h2 class="text-2xl font-black text-white tracking-tighter mb-2 italic uppercase">Operador Autorizado</h2>
+                <p id="user-email" class="text-gray-500 text-[10px] mb-8 tracking-widest uppercase font-bold"></p>
+                
+                <div class="flex flex-col gap-3">
+                    <a href="conectarse.html" class="bg-orange-500 hover:bg-orange-400 text-black font-black py-4 rounded-2xl transition transform hover:scale-105 shadow-xl">
+                        ENTRAR AL PANEL
+                    </a>
+                    <button id="sign-out" class="text-gray-600 text-[10px] font-black tracking-widest uppercase hover:text-white transition py-2">
+                        Desconectar Sesión
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+
+    <script>
+        // TUS CREDENCIALES FINALES
+        const firebaseConfig = {
+            apiKey: "AIzaSyB-Pd6wOwMzFS3J_FgtxY21PG4ROX1y7rg",
+            authDomain: "trsnetad.firebaseapp.com",
+            projectId: "trsnetad",
+            storageBucket: "trsnetad.firebasestorage.app",
+            messagingSenderId: "909297297155",
+            appId: "1:909297297155:web:46547d571750f131e8eb36",
+            measurementId: "G-FK7MFTLBYS"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+        const uiConfig = {
+            signInOptions: [
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+            callbacks: {
+                signInSuccessWithAuthResult: () => {
+                    window.location.href = "conectarse.html";
+                    return false;
+                }
+            }
+        };
+
+        firebase.auth().onAuthStateChanged((user) => {
+            const authWrapper = document.getElementById('auth-wrapper');
+            const infoWrapper = document.getElementById('login-info');
+
+            if (user) {
+                authWrapper.classList.add('hidden');
+                infoWrapper.classList.remove('hidden');
+                document.getElementById('user-email').textContent = user.email;
+            } else {
+                authWrapper.classList.remove('hidden');
+                infoWrapper.classList.add('hidden');
+                ui.start('#firebaseui-auth-container', uiConfig);
+            }
+        });
+
+        document.getElementById('sign-out').onclick = () => firebase.auth().signOut();
+    </script>
+</body>
+</html>

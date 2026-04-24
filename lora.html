@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRS NET - Qué es LoRa</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #000;
+      color: white;
+      overflow-x: hidden;
+    }
+    .gradient-bg {
+      background: radial-gradient(
+        600px circle at 50% 100%,
+        rgba(255, 60, 0, 0.3),
+        transparent 70%
+      ),
+      radial-gradient(
+        400px circle at 80% 20%,
+        rgba(0, 140, 255, 0.2),
+        transparent 80%
+      ),
+      radial-gradient(
+        500px circle at 20% 40%,
+        rgba(255, 153, 0, 0.1),
+        transparent 80%
+      );
+      filter: blur(100px);
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+    }
+    .gradient-bottom {
+      background: linear-gradient(to top, #d83b00 0%, transparent 70%);
+      filter: blur(5px);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 64;
+      z-index: -10;
+    }
+    h2 {
+      font-weight: 700;
+    }
+    p {
+      color: #c9c9c9;
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Background -->
+  <div class="gradient-bg"></div>
+  <div class="gradient-bottom"></div>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 w-full flex justify-between items-center px-10 py-5 bg-black/30 backdrop-blur-md border-b border-white/10 z-50">
+    <div class="flex items-center gap-3">
+      <img src="TRS.svg" alt="TRS NET Logo" class="w-20 h-20 object-contain" />
+      <span class="text-white text-xl font-bold">TRS NET</span>
+    </div>
+    <nav class="flex items-center gap-8">
+      <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
+      
+      <a href="nodos.html" class="text-gray-400 hover:text-white transition">Nodos</a>
+      <a href="discom.html" class="text-gray-400 hover:text-white transition">Dispositivos Compatibles</a>
+      <a href="lora.html" class="text-gray-400 hover:text-white transition">LoRa</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="flex flex-col justify-center items-center text-center min-h-screen px-6 pt-32 gap-6">
+    
+    
+    <img src="https://mutelcor.com/wp-content/uploads/2023/03/1631788636-logo-lora.png" alt="Arquitectura LoRa" class="w-full max-w-3xl rounded-lg shadow-lg mt-6" />
+  </section>
+
+  <!-- SECCIÓN 1: Qué es LoRa -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+      <img src="https://heltec.org/wp-content/uploads/2023/10/IMG_0046_800-600x600-1.jpg" alt="Dispositivo LoRa" class="w-full md:w-1/2 rounded-lg shadow-lg" />
+      <div class="md:w-1/2">
+        <h2 class="text-3xl mb-4">¿Qué es LoRa?</h2>
+        <p>
+          LoRa (Long Range) es un protocolo de comunicación inalámbrica que permite transmitir pequeñas cantidades de datos a kilómetros de distancia. Es ideal para sensores y dispositivos IoT que requieren autonomía de batería prolongada.
+        </p>
+        <p class="mt-4">
+          Utiliza modulaciones de espectro ensanchado y frecuencias sub-GHz para aumentar el alcance y la eficiencia energética, aunque con velocidades de datos bajas comparadas con WiFi o 4G.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: Cómo funciona -->
+  <section class="max-w-6xl mx-auto px-6 py-20 bg-black/20 rounded-xl border border-white/10">
+    <h2 class="text-3xl text-center mb-8">¿Cómo funciona LoRa?</h2>
+    <div class="flex flex-col md:flex-row gap-12">
+      <div class="md:w-1/3 text-center">
+        <img src="https://heltec.org/wp-content/uploads/2022/06/a-11-1.png" alt="Gateway LoRa" class="mx-auto mb-4 rounded-lg shadow-lg" />
+        <h3 class="text-xl font-bold mb-2">Dispositivos</h3>
+        <p>Los sensores LoRa recopilan datos y los envían a un gateway cercano mediante señales de baja frecuencia y alto alcance.</p>
+      </div>
+      <div class="md:w-1/3 text-center">
+        <img src="https://meshtastic.org/design/web/social-preview-1200x630.png" alt="Servidor LoRa" class="mx-auto mb-4 rounded-lg shadow-lg" />
+        <h3 class="text-xl font-bold mb-2">Gateways</h3>
+        <p>Los gateways reciben la señal de los dispositivos y la envían a un servidor de red que procesa la información.</p>
+      </div>
+      <div class="md:w-1/3 text-center">
+        <img src="TRS.svg" alt="Aplicación LoRa" class="mx-auto mb-4 rounded-lg shadow-lg" />
+        <h3 class="text-xl font-bold mb-2">Aplicaciones</h3>
+        <p>El servidor entrega los datos a aplicaciones finales para monitoreo, alertas y análisis en tiempo real.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: Beneficios -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <h2 class="text-3xl text-center mb-12">Beneficios de LoRa</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="w-80 bg-black/80 border border-white/10 rounded-xl p-6 shadow-lg">
+        <h3 class="text-xl font-bold mb-2">Largo alcance</h3>
+        <p>Alcances de hasta 10 km en zonas rurales y 2-5 km en zonas urbanas.</p>
+      </div>
+      <div class="w-80 bg-black/80 border border-white/10 rounded-xl p-6 shadow-lg">
+        <h3 class="text-xl font-bold mb-2">Bajo consumo</h3>
+        <p>Dispositivos pueden funcionar años con baterías pequeñas.</p>
+      </div>
+      <div class="w-80 bg-black/80 border border-white/10 rounded-xl p-6 shadow-lg">
+        <h3 class="text-xl font-bold mb-2">Redes escalables</h3>
+        <p>Permite cientos de dispositivos conectados a un solo gateway.</p>
+      </div>
+      <div class="w-80 bg-black/80 border border-white/10 rounded-xl p-6 shadow-lg">
+        <h3 class="text-xl font-bold mb-2">Seguridad</h3>
+        <p>Encriptación de datos de extremo a extremo garantizando privacidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800 py-10 px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm bg-black">
+    <p>&copy; TRS NET. All rights reserved.</p>
+    <div class="flex gap-6 mt-4 md:mt-0">
+      <a href="#" class="hover:text-white">Privacy</a>
+      <a href="#" class="hover:text-white">Terms</a>
+      <a href="#" class="hover:text-white">Status</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANEL DE CONTROL | TRSNETAD</title>
+    <link rel="icon" type="image/svg+xml" href="TRS.svg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: white;
+            /* Ocultamos todo por defecto para que nadie vea el contenido si no está logueado */
+            display: none; 
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .orange-glow-text {
+            text-shadow: 0 0 15px rgba(249, 115, 22, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-orange-900/10 via-black to-black">
+
+    <header class="w-full flex justify-between items-center px-8 py-6 border-b border-white/5 bg-black/40 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-4">
+            <img src="TRS.svg" class="w-8 h-8" alt="Logo">
+            <div class="h-4 w-[1px] bg-white/20"></div>
+            <span class="text-xs font-black tracking-[0.3em] uppercase">
+                Terminal <span class="text-orange-500">TRSNETAD</span>
+            </span>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex flex-col items-end">
+                <span id="user-display" class="text-[10px] font-bold text-orange-500 uppercase tracking-widest leading-none mb-1">Cargando...</span>
+                <span class="text-[8px] text-gray-500 font-black uppercase">Operador Nivel 1</span>
+            </div>
+            <button onclick="logout()" class="px-4 py-2 bg-white/5 hover:bg-red-500/20 border border-white/10 hover:border-red-500/40 text-[10px] font-black rounded-xl transition-all uppercase tracking-tighter">
+                Finalizar Sesión
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 md:p-12">
+        
+        <section class="mb-12">
+            <h1 class="text-6xl font-black tracking-tighter mb-2 orange-glow-text">BIENVENIDO.</h1>
+            <p class="text-gray-500 font-medium tracking-tight">Has accedido a la infraestructura privada de la Red TRS1.</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="glass-panel p-8 rounded-[2.5rem] md:col-span-2">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <h3 class="text-sm font-black uppercase tracking-widest">Estado del Sistema</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                        <p class="text-[10px] text-gray-500 font-bold uppercase mb-1">Uptime</p>
+                        <p class="text-xl font-black tracking-tighter">99.9%</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                        <p class="text-[10px] text-gray-500 font-bold uppercase mb-1">Latencia</p>
+                        <p class="text-xl font-black tracking-tighter text-orange-500">14ms</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                        <p class="text-[10px] text-gray-500 font-bold uppercase mb-1">Nodos</p>
+                        <p class="text-xl font-black tracking-tighter">TRS-01</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                        <p class="text-[10px] text-gray-500 font-bold uppercase mb-1">Carga</p>
+                        <p class="text-xl font-black tracking-tighter">Estable</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8 rounded-[2.5rem] flex flex-col justify-between">
+                <div>
+                    <h3 class="text-sm font-black uppercase tracking-widest mb-6">Acciones Rápidas</h3>
+                    <div class="space-y-3">
+                        <button class="w-full py-4 bg-orange-500 text-black font-black rounded-2xl text-xs uppercase hover:scale-105 transition shadow-lg shadow-orange-500/20">
+                            Abrir Consola Radio
+                        </button>
+                        <button class="w-full py-4 bg-white/5 border border-white/10 text-white font-black rounded-2xl text-xs uppercase hover:bg-white/10 transition">
+                            Gestionar Streams
+                        </button>
+                    </div>
+                </div>
+                <p class="text-[9px] text-gray-600 font-bold mt-6 uppercase tracking-widest">ID Sesión: <span class="text-gray-400">TRS-AD-2026</span></p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyB-Pd6wOwMzFS3J_FgtxY21PG4ROX1y7rg",
+            authDomain: "trsnetad.firebaseapp.com",
+            projectId: "trsnetad",
+            storageBucket: "trsnetad.firebasestorage.app",
+            messagingSenderId: "909297297155",
+            appId: "1:909297297155:web:46547d571750f131e8eb36",
+            measurementId: "G-FK7MFTLBYS"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        // --- EL GUARDIÁN DE ACCESO ---
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // Usuario autenticado: Mostramos la web
+                document.body.style.display = "block";
+                document.getElementById('user-display').textContent = user.email;
+            } else {
+                // Usuario no autenticado: Lo echamos al login
+                window.location.href = "login.html"; 
+            }
+        });
+
+        function logout() {
+            firebase.auth().signOut().then(() => {
+                window.location.href = "login.html";
+            });
+        }
+    </script>
+</body>
+</html>
