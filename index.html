@@ -1,1051 +1,963 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRS NET </title>
-    <link rel="icon" type="image/svg+xml" href="LOGO WEB(1).png" />
+<html lang="es">
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6838243658328521"
-     crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRSNET | Streaming • Radio • Tecnología</title>
+
+    <meta name="description"
+        content="TRSNET es una plataforma de streaming, radio y servicios digitales diseñada para ofrecer la mejor experiencia en entretenimiento.">
+
+    <meta name="theme-color" content="#ff6a00">
+
+    <link rel="icon" href="assets/logos/favicon.png">
 
     <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Custom styles -->
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #000;
-        color: white;
-        overflow-x: hidden;
-      }
-      .gradient-bottom {
-        background: linear-gradient(to top, #d83b00 0%, transparent 70%);
-        filter: blur(5px);
-      }
-      .floating {
-        animation: float 8s ease-in-out infinite alternate;
-      }
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        100% { transform: translateY(-30px); }
-      }
-      .gradient-bg {
-        background: radial-gradient(
-          600px circle at 50% 100%,
-          rgba(255, 60, 0, 0.3),
-          transparent 70%
-        ),
-        radial-gradient(
-          400px circle at 80% 20%,
-          rgba(0, 140, 255, 0.2),
-          transparent 80%
-        ),
-        radial-gradient(
-          500px circle at 20% 40%,
-          rgba(255, 153, 0, 0.1),
-          transparent 80%
-        );
-        filter: blur(100px);
-      }
-      /* From Uiverse.io by felipesntr */ 
-      /* From Uiverse.io by Spacious74 */ 
-.flex {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.outer-cont {
-  padding: 12px 20px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  position: relative;
-  background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
-  border-radius: 12px;
-  color: #fff;
-  transition: all 0.3s ease;
-  box-shadow:
-    inset 0px 0px 5px #ffffffa9,
-    inset 0px 35px 30px #000,
-    0px 5px 10px #000000cc;
-  text-shadow: 1px 1px 1px #000;
-}
-.outer-cont::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  border-radius: 12px;
-  filter: blur(0);
-  z-index: -1;
-  box-shadow: none;
-  background: conic-gradient(
-    #00000000 80deg,
-    #40baf7,
-    #f34ad7,
-    #5bfcc4,
-    #00000000 280deg
-  );
-  transition: all 0.3s ease;
-}
-.outer-cont:hover::before {
-  filter: blur(15px);
-}
-.outer-cont:active::before {
-  filter: blur(5px);
-  transform: translateY(1px);
-}
-.outer-cont:active {
-  box-shadow:
-    inset 0px 0px 5px #ffffffa9,
-    inset 0px 35px 30px #000;
-  margin-top: 3px;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-button:hover {
-  transform: translate(5px, -5px);
-}
-    </style>
-  </head>
+<body class="bg-black text-white overflow-x-hidden">
 
-  <body class="relative overflow-x-hidden">
-    <!-- Background gradients -->
-    <div class="gradient-bg absolute inset-0 -z-10 floating"></div>
-    <div class="gradient-bottom absolute bottom-0 left-0 w-full h-64 -z-10"></div>
-    
-<header class="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 py-4 bg-black/40 backdrop-blur-md border-b border-white/5 z-[100]">
-  
-  <div class="flex items-center group">
-    <a href="index.html" class="flex items-center gap-4 transition-all duration-300 ease-out">
-      <div class="relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-orange-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        
-        <img src="TRS.svg" alt="TRS NET Logo" class="relative w-12 h-12 md:w-14 md:h-14 object-contain filter drop-shadow(0 0 8px rgba(255,255,255,0.2))" />
-      </div>
-      
-      <div class="flex flex-col">
-        <span class="text-white text-xl md:text-2xl font-black tracking-widest leading-none group-hover:text-orange-500 transition-colors">
-          TRS<span class="text-orange-500 group-hover:text-white">NET</span>
-        </span>
-        <div class="flex items-center gap-1.5 mt-1">
-          <span class="h-[2px] w-8 bg-orange-500 rounded-full"></span>
-          <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold">Streaming Hub</span>
-        </div>
-      </div>
-    </a>
-  </div>
+    <!-- Fondo -->
+    <div class="fixed inset-0 -z-50">
 
-  <nav class="hidden lg:flex items-center gap-10">
-    <a href="index.html" class="text-xs uppercase tracking-widest font-bold text-white/70 hover:text-orange-500 transition-all relative group/link">
-      Inicio
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover/link:w-full"></span>
-    </a>
-    <a href="trsnet1.html" class="text-xs uppercase tracking-widest font-bold text-white/70 hover:text-orange-500 transition-all relative group/link">
-      TRSRADIO 1
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover/link:w-full"></span>
-    </a>
-    <a href="https://trsnetspain.github.io/apps/" class="text-xs uppercase tracking-widest font-bold text-white/70 hover:text-orange-500 transition-all relative group/link">
-      TRS APPS
-      <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover/link:w-full"></span>
-    </a>
-  </nav>
-
-  <div class="flex items-center gap-5">
-    <a href="login.html" class="relative inline-flex items-center justify-center px-7 py-3 overflow-hidden font-black text-white bg-orange-600 rounded-lg group shadow-xl shadow-orange-900/20">
-      <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-orange-400 rounded-full group-hover:w-56 group-hover:h-56"></span>
-      <span class="relative text-xs tracking-widest">LOGIN</span>
-    </a>
-    
-    <button class="lg:hidden text-white hover:text-orange-500 transition-colors">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 8h16M4 16h16"></path>
-      </svg>
-    </button>
-  </div>
-
-</header>
- 
-
-<style>
-  body { padding-top: 80px; }
-</style>
-
-    <!-- ================= HERO SECTION ================= -->
-     
-    <section class="relative flex flex-col justify-center items-center text-center min-h-screen px-6 pt-20 overflow-hidden bg-black">
-  
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full">
-    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
-    <div class="absolute bottom-[10%] right-[-10%] w-[40%] h-[40%] bg-orange-600/10 blur-[120px] rounded-full"></div>
-  </div>
-
-  <div class="relative z-10">
-    <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/20 bg-orange-500/5 backdrop-blur-md">
-      <span class="text-orange-400 text-xs font-black tracking-widest uppercase">Seguridad • Privacidad • Libertad</span>
-    </div>
-
-    <h1 class="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter text-white mb-6">
-      Conectando tu mundo, <br />
-      <span class="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-500">impulsando tu futuro.</span> <br />
-      <span class="text-orange-500 drop-shadow-[0_0_15px_rgba(249,115,22,0.4)]">En España</span>
-    </h1>
-
-    <p class="mt-4 text-gray-400 text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
-      Experimenta la verdadera independencia digital. Conéctate a una infraestructura diseñada para proteger tu identidad y tus datos.
-    </p>
-
-    <div class="mt-12 flex flex-col sm:flex-row gap-5 justify-center items-center">
-      
-      <a href="conectarse.html" 
-         class="w-full sm:w-auto bg-orange-500 hover:bg-orange-400 text-black font-black text-lg px-10 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-[0_0_25px_rgba(249,115,22,0.3)] text-center">
-        CONECTARSE
-      </a>
-
-      <a href="informacion.html" 
-         class="w-full sm:w-auto border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 font-bold text-lg px-10 py-4 rounded-2xl transition-all duration-300 backdrop-blur-sm text-center">
-        Más Información
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="absolute bottom-10 animate-bounce opacity-20">
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
-  </div>
-
-</section>
-<div class="flex flex-col md:flex-row items-center justify-center gap-12 py-16 px-6">
-
-  <div class="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-8 w-80 text-center shadow-2xl hover:scale-105 transition shrink-0">
-    <img 
-    src="LOGO WEB(2).png"
-    class="w-24 h-24 mx-auto rounded-2xl shadow-[0_0_25px_rgba(59,130,246,0.9)] mb-6"
-    alt="App Logo">
-
-    <h3 class="text-2xl font-bold text-white mb-2">
-    TRSNET+
-    </h3>
-
-    <p class="text-gray-400 text-sm mb-6">
-    PLATAFORMA DE VIDEO PARA DISFRUTAR TUS CONTENIDOS FAVORITOS.
-    </p>
-
-    <a href="#" 
-    class="bg-blue-500 hover:bg-blue-400 text-black font-semibold px-6 py-3 rounded-full transition">
-    PRÓXIMAMENTE
-    </a>
-  </div>
-
-  <div class="max-w-md text-left">
-    <h2 class="text-4xl font-extrabold text-white mb-4 leading-tight">
-      Lleva tu entretenimiento al <span class="text-blue-500">siguiente nivel.</span>
-    </h2>
-    <p class="text-gray-300 text-lg leading-relaxed mb-6">
-      Con **TRSNET+**, tendrás acceso a una experiencia de streaming fluida, intuitiva y cargada con el mejor contenido. Estamos trabajando para ofrecerte la mejor calidad de imagen y sonido en todos tus dispositivos.
-    </p>
-    <ul class="text-gray-400 space-y-2">
-      <li class="flex items-center gap-2">
-        <span class="text-blue-500">✔</span> Streaming en alta definición
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="text-blue-500">✔</span> Interfaz moderna y minimalista
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="text-blue-500">✔</span> Acceso multidispositivo
-      </li>
-    </ul>
-  </div>
-<section class="flex flex-col md:flex-row items-center justify-center gap-12 py-20 px-6">
-
-  <div class="relative max-w-sm w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl shrink-0">
-    
-    <div class="absolute inset-0 flex items-center justify-center opacity-10">
-      <img src="TRS.svg" class="w-64 blur-2xl" alt="TRSRADIO">
-    </div>
-
-    <div class="absolute inset-0 bg-white/5 backdrop-blur-2xl"></div>
-
-    <div class="relative p-10 text-center">
-      <h2 class="text-3xl font-extrabold text-orange-400 mb-2 tracking-tighter">
-        TRS1
-      </h2>
-
-      <p class="text-xs font-bold text-orange-500/80 mb-8 tracking-[0.2em] animate-pulse">
-         EN DIRECTO
-      </p>
-
-      <div class="flex justify-center items-end gap-1.5 h-16 mb-8">
-        <div class="bar bg-orange-500"></div>
-        <div class="bar bg-orange-400"></div>
-        <div class="bar bg-orange-600"></div>
-        <div class="bar bg-orange-500"></div>
-        <div class="bar bg-orange-300"></div>
-        <div class="bar bg-orange-400"></div>
-        <div class="bar bg-orange-500"></div>
-      </div>
-
-      <audio id="radio" src="https://stream.zeno.fm/rub12huqwj7tv"></audio>
-
-      <button id="playBtn"
-        class="w-full bg-orange-500 hover:bg-orange-400 text-black font-black px-8 py-4 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg mb-8">
-        ▶ ESCUCHAR
-      </button>
-
-      <div class="flex items-center justify-center gap-4 bg-white/5 py-3 px-5 rounded-2xl border border-white/5">
-        <span class="text-gray-400 text-sm">🔊</span>
-        <input id="volume" type="range" min="0" max="1" step="0.01" value="1"
-          class="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-orange-500">
-      </div>
-    </div>
-  </div>
-
-  <div class="max-w-md">
-    <span class="text-orange-500 font-bold tracking-widest text-sm uppercase">Sintoniza la Experiencia</span>
-    <h2 class="text-5xl font-black text-white mt-4 mb-6 leading-none">
-      La radio que <br><span class="text-orange-400">mueve tu mundo.</span>
-    </h2>
-    <p class="text-gray-400 text-lg leading-relaxed mb-8">
-      Disfruta de la mejor selección musical y programas en vivo con una calidad de sonido excepcional. **TRSRADIO 1** es tu compañía perfecta.
-    </p>
-    
-    <div class="grid grid-cols-1 gap-4 text-sm font-medium text-gray-300">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">✦</div>
-        Sonido Premium HD
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">✦</div>
-        Sin cortes ni interrupciones
-      </div>
-      <div class="grid grid-cols-1 gap-4 text-sm font-medium text-gray-300">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">✦</div>
-        En la 88.0 y 107.6 FM en España
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<style>
-  .bar {
-    width: 6px;
-    height: 15px;
-    border-radius: 10px;
-    animation: sound 1.2s infinite ease-in-out;
-  }
-  .bar:nth-child(1) { animation-delay: 0.1s; }
-  .bar:nth-child(2) { animation-delay: 0.3s; }
-  .bar:nth-child(3) { animation-delay: 0.6s; }
-  .bar:nth-child(4) { animation-delay: 0.2s; }
-  .bar:nth-child(5) { animation-delay: 0.5s; }
-  .bar:nth-child(6) { animation-delay: 0.4s; }
-  .bar:nth-child(7) { animation-delay: 0.1s; }
-
-  @keyframes sound {
-    0%, 100% { height: 15px; opacity: 0.5; }
-    50% { height: 50px; opacity: 1; }
-  }
-
-  #volume::-webkit-slider-thumb {
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-  }
-</style>
-
-<script>
-  const radio = document.getElementById("radio");
-  const btn = document.getElementById("playBtn");
-  const volume = document.getElementById("volume");
-
-  btn.onclick = () => {
-    if (radio.paused) {
-      radio.play();
-      btn.innerHTML = "⏸ PAUSAR";
-    } else {
-      radio.pause();
-      btn.innerHTML = "▶ ESCUCHAR";
-    }
-  };
-
-  volume.addEventListener("input", () => {
-    radio.volume = volume.value;
-  });
-</script>
-</div>
-</div>
-<section class="py-16 px-6 bg-transparent">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter">
-        NUESTRAS <span class="text-orange-500">EMISORAS</span>
-      </h2>
-      <p class="text-gray-400 max-w-2xl mx-auto">
-        Sintoniza la mejor variedad de contenido a través de nuestras estaciones oficiales. 
-        Calidad de sonido premium en cada señal.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-      
-      <div class="group relative bg-white/5 border border-white/10 rounded-3xl p-6 transition-all duration-500 hover:bg-orange-500/10 hover:border-orange-500/30 hover:-translate-y-2">
-        <div class="relative aspect-square mb-6 overflow-hidden rounded-2xl bg-black/40 flex items-center justify-center">
-          <img src="TRS RADIO LOGO.svg" alt="Emisora 1" class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <h3 class="text-white font-bold text-center text-lg tracking-wide uppercase">TRS1</h3>
-        <p class="text-orange-500 text-[10px] text-center font-black tracking-[0.2em] mt-2 opacity-0 group-hover:opacity-100 transition-opacity">EXITOS</p>
-      </div>
-<div class="group relative bg-white/5 border border-white/10 rounded-3xl p-6 transition-all duration-500 hover:bg-orange-500/10 hover:border-orange-500/30 hover:-translate-y-2">
-        <div class="relative aspect-square mb-6 overflow-hidden rounded-2xl bg-black/40 flex items-center justify-center">
-          <img src="POPFM RADIO LOGO.png" alt="Emisora 3" class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <h3 class="text-white font-bold text-center text-lg tracking-wide uppercase">TRS POPFM</h3>
-        <p class="text-orange-500 text-[10px] text-center font-black tracking-[0.2em] mt-2 opacity-0 group-hover:opacity-100 transition-opacity">POPULAR</p>
-      </div>
-      <div class="group relative bg-white/5 border border-white/10 rounded-3xl p-6 transition-all duration-500 hover:bg-orange-500/10 hover:border-orange-500/30 hover:-translate-y-2">
-        <div class="relative aspect-square mb-6 overflow-hidden rounded-2xl bg-black/40 flex items-center justify-center">
-          <img src="TRS TECHNO RADIO LOGO.svg" alt="Emisora 2" class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <h3 class="text-white font-bold text-center text-lg tracking-wide uppercase">TRS TECHNO</h3>
-        <p class="text-orange-500 text-[10px] text-center font-black tracking-[0.2em] mt-2 opacity-0 group-hover:opacity-100 transition-opacity">TECHNO</p>
-      </div>
-
-      
-
-      <div class="group relative bg-white/5 border border-white/10 rounded-3xl p-6 transition-all duration-500 hover:bg-orange-500/10 hover:border-orange-500/30 hover:-translate-y-2">
-        <div class="relative aspect-square mb-6 overflow-hidden rounded-2xl bg-black/40 flex items-center justify-center">
-          <img src="TRS URBAN RADIO LOGO.svg" alt="Emisora 4" class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        <h3 class="text-white font-bold text-center text-lg tracking-wide uppercase">TRS URBAN</h3>
-        <p class="text-orange-500 text-[10px] text-center font-black tracking-[0.2em] mt-2 opacity-0 group-hover:opacity-100 transition-opacity">URBANO</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-<div class="max-w-4xl mx-auto px-6 py-10">
-  <div class="relative overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-10 py-3 shadow-2xl">
-    
-    <div class="relative flex flex-col md:flex-row items-center justify-between gap-6">
-      
-      <div class="flex items-center gap-3 shrink-0">
-        <span class="relative flex h-3 w-3">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
-        </span>
-        <h4 class="text-white font-bold tracking-wide text-sm md:text-base"> TRSNET+ PRÓXIMAMENTE EN:</h4>
-      </div>
-
-      <div class="flex items-center gap-8 md:gap-12">
-        
-        <div class="flex items-center gap-3 group transition">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" 
-               class="w-6 h-6 object-contain filter grayscale group-hover:grayscale-0 transition duration-300" 
-               alt="Windows">
-          <span class="text-gray-400 text-sm font-bold group-hover:text-white transition">Windows</span>
+        <div
+            class="absolute w-[650px] h-[650px] bg-orange-600/20 blur-[160px] rounded-full -top-52 left-1/2 -translate-x-1/2">
         </div>
 
-        <div class="flex items-center gap-3 group transition">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" 
-               class="w-6 h-6 object-contain invert group-hover:invert-0 group-hover:brightness-200 transition duration-300" 
-               alt="macOS">
-          <span class="text-gray-400 text-sm font-bold group-hover:text-white transition">macOS</span>
+        <div
+            class="absolute w-[450px] h-[450px] bg-blue-600/20 blur-[150px] rounded-full bottom-0 right-0">
         </div>
 
-        <div class="flex items-center gap-3 group transition">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" 
-               class="w-7 h-7 object-contain group-hover:scale-110 transition duration-300" 
-               alt="Linux">
-          <span class="text-gray-400 text-sm font-bold group-hover:text-white transition">Linux</span>
+    </div>
+
+    <!-- HEADER -->
+
+    <header
+        class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex justify-between items-center px-6 py-5">
+
+                <!-- Logo -->
+
+                <a href="index.html"
+                    class="flex items-center gap-4 group">
+
+                    <img src="assets/logos/TRS.svg"
+                        class="w-14 transition duration-500 group-hover:rotate-6 group-hover:scale-110">
+
+                    <div>
+
+                        <h1
+                            class="text-2xl font-black tracking-widest">
+
+                            TRS<span class="text-orange-500">NET</span>
+
+                        </h1>
+
+                        <p class="text-xs text-gray-400 tracking-[4px] uppercase">
+
+                            Streaming Hub
+
+                        </p>
+
+                    </div>
+
+                </a>
+
+                <!-- Menú -->
+
+                <nav class="hidden lg:flex gap-10 font-semibold">
+
+                    <a href="#inicio"
+                        class="hover:text-orange-500 duration-300">
+
+                        Inicio
+
+                    </a>
+
+                    <a href="#radio"
+                        class="hover:text-orange-500 duration-300">
+
+                        Radio
+
+                    </a>
+
+                    <a href="#streaming"
+                        class="hover:text-orange-500 duration-300">
+
+                        TRSNET+
+
+                    </a>
+
+                    <a href="#emisoras"
+                        class="hover:text-orange-500 duration-300">
+
+                        Emisoras
+
+                    </a>
+
+                    <a href="#faq"
+                        class="hover:text-orange-500 duration-300">
+
+                        FAQ
+
+                    </a>
+
+                </nav>
+
+                <!-- Login -->
+
+                <a href="login.html"
+                    class="hidden md:flex bg-orange-500 hover:bg-orange-400 text-black font-bold px-7 py-3 rounded-xl transition">
+
+                    LOGIN
+
+                </a>
+
+                <!-- Botón móvil -->
+
+                <button id="menuButton"
+                    class="lg:hidden">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        class="w-8">
+
+                        <path stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+
+                    </svg>
+
+                </button>
+
+            </div>
+
         </div>
 
-      </div>
+    </header>
 
-    </div>
-  </div>
-</div>
+    <!-- HERO -->
 
+    <section id="inicio"
+        class="min-h-screen flex items-center">
 
-   
+        <div
+            class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
 
-<section class="max-w-3xl mx-auto px-6 py-20">
-  <h2 class="text-3xl font-bold text-white mb-10 text-center">Preguntas Frecuentes</h2>
-  
-  <div class="space-y-4">
-    <details class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-      <summary class="list-none p-6 text-white font-semibold cursor-pointer flex justify-between items-center group-open:bg-white/10 transition">
-        ¿Cuándo estará disponible TRSNET+?
-        <span class="transition group-open:rotate-180">▼</span>
-      </summary>
-      <div class="p-6 text-gray-400 border-t border-white/5">
-        Estamos trabajando intensamente para lanzar la versión beta a finales de este año. ¡Suscríbete a nuestro boletín para ser el primero en entrar!
-      </div>
-    </details>
+            <!-- Texto -->
 
-    <details class="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-      <summary class="list-none p-6 text-white font-semibold cursor-pointer flex justify-between items-center group-open:bg-white/10 transition">
-        ¿En qué dispositivos podré verlo?
-        <span class="transition group-open:rotate-180">▼</span>
-      </summary>
-      <div class="p-6 text-gray-400 border-t border-white/5">
-        Será compatible con Windows, macOS, Linux, y próximamente lanzaremos aplicaciones nativas para Android e iOS.
-      </div>
-    </details>
-  </div>
-</section>
-    <!-- ================= FEATURES SECTION ================= -->
-<section class="py-20 overflow-hidden bg-transparent">
-  
-  <div class="text-center mb-10">
-    <p class="text-gray-500 tracking-[0.3em] text-xs font-bold uppercase">Ecosistema Global</p>
-  </div>
+            <div>
 
-  <div class="relative flex overflow-x-hidden border-y border-white/5 bg-white/[0.02] backdrop-blur-sm py-10">
-    
-    <div class="flex animate-marquee whitespace-nowrap items-center gap-20 px-10">
-      
-      <span class="text-white font-black tracking-widest text-4xl hover:text-blue-400 transition duration-500 cursor-default">TRSNET</span>
+                <span
+                    class="inline-flex bg-orange-500/10 border border-orange-500/30 px-5 py-2 rounded-full text-orange-400 uppercase tracking-[5px] text-xs font-bold">
 
-      <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition duration-300">
-        <img src="LOGO WEB(2).png" class="w-12 h-12 rounded-xl shadow-lg shadow-blue-500/20" alt="TRSNET+">
-        <span class="text-white font-black tracking-tighter text-2xl uppercase">TRSNET+</span>
-      </div>
+                    Streaming · Radio · Tecnología
 
-      <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition duration-300">
-        <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center font-black text-black text-xl shadow-lg shadow-orange-500/20">R</div>
-        <span class="text-white font-black tracking-tighter text-2xl uppercase">TRSRADIO</span>
-      </div>
+                </span>
 
-      <span class="text-gray-600 text-3xl font-black italic hover:text-blue-500 transition duration-300 cursor-default">TRSTV 1</span>
-      
-      <span class="text-gray-600 text-3xl font-black italic hover:text-red-600 transition duration-300 cursor-default">TRSTV NOTICIAS</span>
-    </div>
+                <h2
+                    class="text-6xl lg:text-8xl font-black leading-none mt-8">
 
-    <div class="absolute top-0 flex animate-marquee2 whitespace-nowrap items-center gap-20 py-10 px-10">
-      
-      <span class="text-white font-black tracking-widest text-4xl hover:text-blue-400 transition duration-500 cursor-default">TRSNET</span>
+                    Conectando
 
-      <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition duration-300">
-        <img src="LOGO WEB(2).png" class="w-12 h-12 rounded-xl" alt="TRSNET+">
-        <span class="text-white font-black tracking-tighter text-2xl uppercase">TRSNET+</span>
-      </div>
+                    <br>
 
-      <div class="flex items-center gap-3 opacity-70 hover:opacity-100 transition duration-300">
-        <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center font-black text-black text-xl">R</div>
-        <span class="text-white font-black tracking-tighter text-2xl uppercase">TRSRADIO</span>
-      </div>
+                    tu mundo.
 
-      <span class="text-gray-600 text-3xl font-black italic hover:text-blue-500 transition duration-300 cursor-default">TRSTV 1</span>
-      
-      <span class="text-gray-600 text-3xl font-black italic hover:text-red-600 transition duration-300 cursor-default">TRSTV NOTICIAS</span>
-    </div>
-  </div>
-</section>
+                </h2>
 
-<style>
-  /* Animación principal */
-  @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-  }
+                <h3
+                    class="text-5xl lg:text-7xl font-black text-orange-500 mt-2">
 
-  @keyframes marquee2 {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(0%); }
-  }
+                    Impulsando
 
-  .animate-marquee {
-    animation: marquee 30s linear infinite; /* He subido a 30s para que sea más suave */
-  }
+                    tu futuro.
 
-  .animate-marquee2 {
-    animation: marquee2 30s linear infinite;
-  }
+                </h3>
 
-  /* Eliminada la regla de pausa al hover */
-</style>
+                <p
+                    class="text-gray-400 text-xl mt-8 leading-relaxed max-w-xl">
 
-<style>
-  @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-  }
+                    Descubre una nueva generación de entretenimiento digital.
+                    Streaming, radio online y tecnología unidos en una sola plataforma.
 
-  @keyframes marquee2 {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(0%); }
-  }
+                </p>
 
-  .animate-marquee {
-    animation: marquee 25s linear infinite;
-  }
+                <div class="flex flex-wrap gap-5 mt-10">
 
-  .animate-marquee2 {
-    animation: marquee2 25s linear infinite;
-  }
-</style>
-    
+                    <a href="conectarse.html"
+                        class="bg-orange-500 hover:bg-orange-400 text-black font-bold px-10 py-5 rounded-2xl transition">
+
+                        CONECTARSE
+
+                    </a>
+
+                    <a href="informacion.html"
+                        class="border border-white/10 hover:border-orange-500 hover:bg-white/5 px-10 py-5 rounded-2xl transition">
+
+                        MÁS INFORMACIÓN
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Imagen -->
+
+            <div class="flex justify-center">
+
+                <img src="assets/images/hero.png"
+                    class="w-full max-w-lg animate-pulse"
+                    alt="TRSNET">
+
+            </div>
+
+        </div>
+
     </section>
+    <!-- ================= TRSNET+ ================= -->
 
-    <!-- Fuente Stack Sans Text -->
+<section id="streaming" class="py-28 px-6">
 
-  
-</section>
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
-<style>
-  /* Importar la fuente Stack Sans Notch desde Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap');
+        <!-- Imagen -->
 
-  .ia-security {
-    font-family: 'Stack Sans Notch', sans-serif;
-    text-align: center;
-    padding: 120px 20px;
-    max-width: 1200px;
-    margin: auto;
-    color: white;
-  }
+        <div class="flex justify-center">
 
-  .icon-container {
-    display: flex;
-    justify-content: center;
-  }
+            <div
+                class="relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-2xl">
 
-  .icon-floating {
-    width: 110px;
-    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
-    opacity: 0;
-    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
-  }
+                <img src="assets/images/trsnetplus.png"
+                    alt="TRSNET+"
+                    class="w-80 mx-auto rounded-2xl">
 
-  @keyframes float {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-14px); }
-    100% { transform: translateY(0px); }
-  }
-  @keyframes glow {
-    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
-    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-  }
-  @keyframes fadein {
-    from { opacity: 0; transform: scale(0.85); }
-    to   { opacity: 1; transform: scale(1); }
-  }
+                <div
+                    class="absolute -top-5 -right-5 bg-blue-500 text-white px-5 py-2 rounded-full font-bold">
 
-  .ia-security h2 {
-    font-size: 2.6rem;
-    margin-top: 25px;
-    font-weight: 700;
-  }
-  .subtitle {
-    color: #c9c9c9;
-    margin-top: 10px;
-    font-size: 1.1rem;
-  }
+                    Próximamente
 
-  .content-box {
-    margin-top: 70px;
-    padding: 50px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(10px);
-  }
+                </div>
 
-  .text {
-    width: 50%;
-    text-align: left;
-  }
-  .text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  .text p {
-    color: #b4b4b4;
-    line-height: 1.6;
-  }
-  .link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4ea1ff;
-    text-decoration: none;
-    font-weight: 500;
-  }
+            </div>
 
-  .chat-box {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-  }
-  .chat-box img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
-  }
-</style>
-<!-- Fuente Stack Sans Text -->
-<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400;700&display=swap" rel="stylesheet">
+        </div>
 
+        <!-- Información -->
 
-<style>
-  /* Importar la fuente Stack Sans Notch desde Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+        <div>
 
-  .ia-security {
-    font-family: 'Stack Sans Notch', sans-serif;
-    text-align: center;
-    padding: 120px 20px;
-    max-width: 1200px;
-    margin: auto;
-    color: white;
-  }
+            <span
+                class="uppercase tracking-[4px] text-blue-400 font-bold">
 
-  .icon-container {
-    display: flex;
-    justify-content: center;
-  }
+                Plataforma de Streaming
 
-  .icon-floating {
-    width: 110px;
-    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
-    opacity: 0;
-    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
-  }
+            </span>
 
-  @keyframes float {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-14px); }
-    100% { transform: translateY(0px); }
-  }
-  @keyframes glow {
-    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
-    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-  }
-  @keyframes fadein {
-    from { opacity: 0; transform: scale(0.85); }
-    to   { opacity: 1; transform: scale(1); }
-  }
+            <h2
+                class="text-5xl md:text-6xl font-black mt-6 leading-tight">
 
-  .ia-security h2 {
-    font-size: 2.6rem;
-    margin-top: 25px;
-    font-weight: 700;
-  }
-  .subtitle {
-    color: #c9c9c9;
-    margin-top: 10px;
-    font-size: 1.1rem;
-  }
+                Todo tu entretenimiento
 
-  .content-box {
-    margin-top: 70px;
-    padding: 50px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(10px);
-  }
+                <span class="text-blue-500">
 
-  .text {
-    width: 50%;
-    text-align: left;
-  }
-  .text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  .text p {
-    color: #b4b4b4;
-    line-height: 1.6;
-  }
-  .link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4ea1ff;
-    text-decoration: none;
-    font-weight: 500;
-  }
+                    en un solo lugar.
 
-  .chat-box {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-  }
-  .chat-box img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
-  }
-</style>
-<style>
-body {
-  background: #0d0f16;
-  font-family: 'Stack Sans Text', sans-serif;
-  margin: 0;
-  color: white;
-}
+                </span>
 
-.ia-security {
-  text-align: center;
-  padding: 100px 0;
-}
+            </h2>
 
-.lp-SectionIntroWebGL {
-  width: 95px;
-  height: 95px;
-  margin: 0 auto 20px;
-  position: relative;
-}
+            <p
+                class="text-gray-400 text-lg mt-8 leading-relaxed">
 
-.lp-SectionIntroWebGL-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
+                TRSNET+ reunirá películas, series, televisión en directo,
+                documentales y contenido exclusivo con una experiencia moderna,
+                rápida y diseñada para cualquier dispositivo.
 
-/* SVG contorno neon */
-.shield-border-svg {
-  position: absolute;
-  top:0; left:0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-.shield-border {
-  fill: none;
-  stroke: #4da3ff;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
-  filter: drop-shadow(0 0 8px #4da3ff);
-  animation: drawBorder 1.5s forwards;
-}
-.check {
-  fill: none;
-  stroke: #4da3ff;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  filter: drop-shadow(0 0 8px #4da3ff);
-  animation: drawCheck 1s forwards;
-  animation-delay: 1.5s;
-}
+            </p>
 
-@keyframes drawBorder {
-  0% { stroke-dashoffset: 320; opacity:1; }
-  80% { stroke-dashoffset:0; opacity:1; }
-  100% { stroke-dashoffset:0; opacity:0.4; }
-}
+            <div class="grid sm:grid-cols-2 gap-5 mt-10">
 
-@keyframes drawCheck {
-  0% { stroke-dashoffset:60; opacity:0; }
-  50% { opacity:1; }
-  100% { stroke-dashoffset:0; opacity:1; }
-}
+                <div class="bg-white/5 rounded-2xl p-5">
 
-/* Texto y subtítulos */
-.ia-security h2 {
-  font-size: 40px;
-  font-weight: 700;
-}
-.subtitle {
-  margin-top:10px;
-  opacity:0.7;
-  font-size:18px;
-}
+                    <h3 class="font-bold text-xl mb-2">
 
-/* Contenedor principal */
-.content-box {
-  margin: 80px auto 0;
-  width: 90%;
-  max-width: 1100px;
-  padding:50px;
-  border-radius:20px;
-  background: linear-gradient(180deg, rgba(130,60,255,0.2), rgba(20,20,30,0.5));
-  border:1px solid rgba(255,255,255,0.1);
-  display:flex;
-  gap:50px;
-  justify-content:space-between;
-}
-.text {
-  width:45%;
-  text-align:left;
-}
-.text h3 {
-  font-size:28px;
-  margin-bottom:10px;
-}
-.link {
-  margin-top:20px;
-  display:inline-block;
-  color:#4da3ff;
-}
-.chat-box {
-  width:55%;
-  border-radius:20px;
-  overflow:hidden;
-}
-.chat-box img {
-  width:100%;
-  display:block;
-  border-radius:20px;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Contorno blanco 50% */
-  box-sizing: border-box;
-}
-</style>
+                        📺 Streaming HD
 
+                    </h3>
 
- 
-<!-- ================= ESTILOS ================= -->
-<style>
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+                    <p class="text-gray-400">
 
-  .animate-scroll {
-    display: flex;
-    animation: scroll 30s linear infinite;
-  }
+                        Calidad Full HD y 4K.
 
-  /* Pausar animación al hacer hover */
-  #carousel:hover {
-    animation-play-state: paused;
-  }
-</style>
+                    </p>
 
-  <style>
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-    .animate-scroll {
-      animation: scroll 25s linear infinite;
-    }
-  </style>
-</section>
+                </div>
 
-        
-        
-        <pre
-          class="text-lime-400 font-mono text-sm overflow-x-auto whitespace-pre"
-        ><code>
+                <div class="bg-white/5 rounded-2xl p-5">
 
-        </code></pre>
-      </div>
-    </section>
+                    <h3 class="font-bold text-xl mb-2">
 
-  
+                        📱 Multiplataforma
 
-  <style>
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-    .animate-scroll {
-      animation: scroll 25s linear infinite;
-    }
-  </style>
-</section>
+                    </h3>
 
-        
-        
-        <pre
-          class="text-lime-400 font-mono text-sm overflow-x-auto whitespace-pre"
-        ><code>
+                    <p class="text-gray-400">
 
-        </code></pre>
-      </div>
-    </section>
+                        Móvil, Tablet, Smart TV y PC.
 
-    <!-- ================= AI AGENTS SECTION ================= -->
-  
+                    </p>
 
-    <!-- ================= CTA SECTION ================= -->
-  <section class="relative py-32 px-6 text-center overflow-hidden bg-black">
-  
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-orange-500/10 blur-[120px] rounded-full"></div>
+                </div>
 
-  <div class="relative z-10">
-    <span class="text-orange-500 font-bold tracking-[0.3em] text-xs uppercase mb-4 block">Nuestra Trayectoria</span>
-    
-    <h2 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">
-      Liderando el streaming <br>
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-        desde el 2020
-      </span>
-    </h2>
+                <div class="bg-white/5 rounded-2xl p-5">
 
-    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-      Más de 6 años innovando en la distribución de contenido digital. <br class="hidden md:block"> 
-      Experiencia contrastada creando experiencias únicas para nuestra comunidad.
-    </p>
+                    <h3 class="font-bold text-xl mb-2">
 
-    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-      <button class="group relative bg-orange-500 hover:bg-orange-400 text-black font-black text-xl px-12 py-5 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(249,115,22,0.3)]">
-        SABER MÁS
-        <span class="ml-2 transition-transform group-hover:translate-x-1 inline-block">→</span>
-      </button>
-      
-      <div class="text-left border-l border-white/10 pl-6 hidden md:block">
-        <p class="text-white font-bold text-2xl">+2,000</p>
-        <p class="text-gray-500 text-xs uppercase tracking-widest">Días de emisión</p>
-      </div>
+                        ⚡ Ultra rápido
+
+                    </h3>
+
+                    <p class="text-gray-400">
+
+                        Servidores optimizados.
+
+                    </p>
+
+                </div>
+
+                <div class="bg-white/5 rounded-2xl p-5">
+
+                    <h3 class="font-bold text-xl mb-2">
+
+                        🔒 Seguro
+
+                    </h3>
+
+                    <p class="text-gray-400">
+
+                        Privacidad y protección de datos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
 
 </section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer
-      class="border-t border-neutral-800 py-10 px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm bg-black"
-    >
-      <p>&copy; TRS NET. All rights reserved.</p>
-      <div class="flex gap-6 mt-4 md:mt-0">
-        <a href="#" class="hover:text-white">Privacy</a>
-        <a href="#" class="hover:text-white">Terms</a>
-        <a href="#" class="hover:text-white">Status</a>
-      </div>
-    </footer>
-  </body>
+<!-- ================= RADIO ================= -->
+
+<section id="radio" class="py-32 px-6 bg-black">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-20">
+
+            <span
+                class="text-orange-500 uppercase tracking-[5px] font-bold">
+
+                Radio en Directo
+
+            </span>
+
+            <h2
+                class="text-5xl md:text-6xl font-black mt-6">
+
+                Escucha
+
+                <span class="text-orange-500">
+
+                    TRSRADIO 1
+
+                </span>
+
+            </h2>
+
+            <p
+                class="text-gray-400 mt-6 max-w-2xl mx-auto">
+
+                Música, programas y entretenimiento durante las 24 horas del día.
+
+            </p>
+
+        </div>
+
+        <div
+            class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Reproductor -->
+
+            <div
+                class="bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-xl">
+
+                <img src="assets/logos/TRS RADIO LOGO.svg"
+                    class="w-36 mx-auto mb-8">
+
+                <div
+                    class="flex justify-center items-center gap-3 mb-8">
+
+                    <span
+                        class="w-3 h-3 bg-red-500 rounded-full animate-pulse">
+
+                    </span>
+
+                    <span
+                        class="uppercase tracking-[4px] text-red-400 font-bold">
+
+                        En Directo
+
+                    </span>
+
+                </div>
+
+                <audio
+                    id="radioPlayer"
+                    src="https://stream.zeno.fm/rub12huqwj7tv">
+                </audio>
+
+                <button
+                    id="playButton"
+                    class="w-full bg-orange-500 hover:bg-orange-400 text-black font-bold py-5 rounded-2xl text-xl transition">
+
+                    ▶ Reproducir
+
+                </button>
+
+                <div class="mt-8">
+
+                    <input
+                        id="volume"
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="1"
+                        class="w-full">
+
+                </div>
+
+            </div>
+
+            <!-- Información -->
+
+            <div>
+
+                <h3
+                    class="text-4xl font-black">
+
+                    La mejor música
+
+                    <br>
+
+                    sin interrupciones.
+
+                </h3>
+
+                <p
+                    class="text-gray-400 text-lg mt-8 leading-relaxed">
+
+                    Disfruta de emisiones en directo con una calidad de sonido
+                    excepcional, programación continua y acceso desde cualquier
+                    lugar del mundo.
+
+                </p>
+
+                <div class="grid gap-5 mt-10">
+
+                    <div class="flex gap-4">
+
+                        <div class="text-orange-500 text-2xl">
+
+                            ✔
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+
+                                Sonido HD
+
+                            </h4>
+
+                            <p class="text-gray-400">
+
+                                Audio de alta calidad.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-4">
+
+                        <div class="text-orange-500 text-2xl">
+
+                            ✔
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+
+                                Disponible 24/7
+
+                            </h4>
+
+                            <p class="text-gray-400">
+
+                                Siempre en directo.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-4">
+
+                        <div class="text-orange-500 text-2xl">
+
+                            ✔
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-bold">
+
+                                Acceso mundial
+
+                            </h4>
+
+                            <p class="text-gray-400">
+
+                                Escúchala desde cualquier país.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= EMISORAS ================= -->
+
+<section id="emisoras" class="py-28 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-20">
+
+            <span class="uppercase tracking-[4px] text-orange-500 font-bold">
+
+                Nuestras Emisoras
+
+            </span>
+
+            <h2 class="text-5xl md:text-6xl font-black mt-5">
+
+                Elige tu
+
+                <span class="text-orange-500">
+
+                    estilo musical
+
+                </span>
+
+            </h2>
+
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- TRS1 -->
+
+            <div class="bg-white/5 rounded-3xl border border-white/10 p-8 hover:scale-105 transition duration-500 text-center">
+
+                <img src="assets/logos/TRS RADIO LOGO.svg"
+                    class="w-28 mx-auto mb-6">
+
+                <h3 class="text-2xl font-bold">
+
+                    TRS1
+
+                </h3>
+
+                <p class="text-gray-400 mt-2">
+
+                    Éxitos y entretenimiento.
+
+                </p>
+
+                <a href="trs1.html"
+                    class="inline-block mt-6 bg-orange-500 px-6 py-3 rounded-xl text-black font-bold">
+
+                    Escuchar
+
+                </a>
+
+            </div>
+
+            <!-- POP -->
+
+            <div class="bg-white/5 rounded-3xl border border-white/10 p-8 hover:scale-105 transition duration-500 text-center">
+
+                <img src="assets/logos/POPFM RADIO LOGO.png"
+                    class="w-28 mx-auto mb-6">
+
+                <h3 class="text-2xl font-bold">
+
+                    TRS POPFM
+
+                </h3>
+
+                <p class="text-gray-400 mt-2">
+
+                    Los mejores éxitos.
+
+                </p>
+
+                <button
+                    class="mt-6 bg-gray-700 px-6 py-3 rounded-xl font-bold">
+
+                    Próximamente
+
+                </button>
+
+            </div>
+
+            <!-- TECHNO -->
+
+            <div class="bg-white/5 rounded-3xl border border-white/10 p-8 hover:scale-105 transition duration-500 text-center">
+
+                <img src="assets/logos/TRS TECHNO RADIO LOGO.svg"
+                    class="w-28 mx-auto mb-6">
+
+                <h3 class="text-2xl font-bold">
+
+                    TRS TECHNO
+
+                </h3>
+
+                <p class="text-gray-400 mt-2">
+
+                    Música electrónica.
+
+                </p>
+
+                <button
+                    class="mt-6 bg-gray-700 px-6 py-3 rounded-xl font-bold">
+
+                    Próximamente
+
+                </button>
+
+            </div>
+
+            <!-- URBAN -->
+
+            <div class="bg-white/5 rounded-3xl border border-white/10 p-8 hover:scale-105 transition duration-500 text-center">
+
+                <img src="assets/logos/TRS URBAN RADIO LOGO.svg"
+                    class="w-28 mx-auto mb-6">
+
+                <h3 class="text-2xl font-bold">
+
+                    TRS URBAN
+
+                </h3>
+
+                <p class="text-gray-400 mt-2">
+
+                    Lo mejor del género urbano.
+
+                </p>
+
+                <button
+                    class="mt-6 bg-gray-700 px-6 py-3 rounded-xl font-bold">
+
+                    Próximamente
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ESTADÍSTICAS ================= -->
+
+<section class="py-24 px-6 bg-white/5">
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
+
+        <div>
+
+            <h3 class="text-5xl font-black text-orange-500">
+
+                6+
+
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+
+                Años Online
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3 class="text-5xl font-black text-orange-500">
+
+                4
+
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+
+                Emisoras
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3 class="text-5xl font-black text-orange-500">
+
+                24/7
+
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+
+                Emisión Continua
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3 class="text-5xl font-black text-orange-500">
+
+                HD
+
+            </h3>
+
+            <p class="text-gray-400 mt-3">
+
+                Calidad de Audio
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section id="faq" class="py-28 px-6">
+
+    <div class="max-w-4xl mx-auto">
+
+        <h2 class="text-5xl font-black text-center mb-16">
+
+            Preguntas Frecuentes
+
+        </h2>
+
+        <div class="space-y-6">
+
+            <details class="bg-white/5 rounded-2xl p-6">
+
+                <summary class="cursor-pointer font-bold text-xl">
+
+                    ¿Qué es TRSNET?
+
+                </summary>
+
+                <p class="text-gray-400 mt-4">
+
+                    TRSNET reúne radio, streaming y futuros servicios digitales en una única plataforma.
+
+                </p>
+
+            </details>
+
+            <details class="bg-white/5 rounded-2xl p-6">
+
+                <summary class="cursor-pointer font-bold text-xl">
+
+                    ¿Cuándo llegará TRSNET+?
+
+                </summary>
+
+                <p class="text-gray-400 mt-4">
+
+                    Estamos trabajando para lanzar la primera versión muy pronto.
+
+                </p>
+
+            </details>
+
+            <details class="bg-white/5 rounded-2xl p-6">
+
+                <summary class="cursor-pointer font-bold text-xl">
+
+                    ¿Es gratuito?
+
+                </summary>
+
+                <p class="text-gray-400 mt-4">
+
+                    La radio es completamente gratuita. Algunos servicios futuros podrán requerir una suscripción.
+
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="py-32 px-6">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+        <h2 class="text-6xl font-black">
+
+            Únete al futuro
+
+            <span class="text-orange-500">
+
+                de TRSNET
+
+            </span>
+
+        </h2>
+
+        <p class="text-gray-400 text-xl mt-8 max-w-3xl mx-auto">
+
+            Descubre nuevas experiencias digitales, radio online y entretenimiento sin límites.
+
+        </p>
+
+        <a href="conectarse.html"
+            class="inline-block mt-12 bg-orange-500 hover:bg-orange-400 text-black font-bold text-xl px-10 py-5 rounded-2xl transition">
+
+            COMENZAR AHORA
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="border-t border-white/10 py-12 px-6">
+
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
+
+        <div>
+
+            <h2 class="text-3xl font-black">
+
+                TRS<span class="text-orange-500">NET</span>
+
+            </h2>
+
+            <p class="text-gray-500 mt-2">
+
+                © 2026 TRSNET. Todos los derechos reservados.
+
+            </p>
+
+        </div>
+
+        <div class="flex gap-8 text-gray-400">
+
+            <a href="informacion.html" class="hover:text-white">
+
+                Información
+
+            </a>
+
+            <a href="privacidad.html" class="hover:text-white">
+
+                Privacidad
+
+            </a>
+
+            <a href="terminos.html" class="hover:text-white">
+
+                Términos
+
+            </a>
+
+            <a href="contacto.html" class="hover:text-white">
+
+                Contacto
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/app.js"></script>
+
+</body>
 </html>
-
-
