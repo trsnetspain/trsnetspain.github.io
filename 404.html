@@ -3,128 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡CABLE SECCIONADO! | TRS NET</title>
+    <title>404 | SYSTEM FAILURE | TRS NET</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap');
+        /* Fuentes cibernéticas: Rajdhani para títulos, Share Tech Mono para código */
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
 
         body {
-            background-color: #080808;
-            color: white;
-            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ea580c;
+            font-family: 'Share Tech Mono', monospace;
             overflow: hidden;
+            /* Degradado radial de fondo: de un naranja muy oscuro a negro profundo */
+            background: radial-gradient(circle at center, #1a0800 0%, #000000 100%);
         }
 
-        /* Animación del cable colgando */
-        @keyframes swing {
-            0% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
-            100% { transform: rotate(-3deg); }
-        }
-
-        .wire-container {
-            animation: swing 4s ease-in-out infinite;
-            transform-origin: top center;
-        }
-
-        /* Chispas del cortocircuito */
-        @keyframes spark {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            5%, 15% { opacity: 1; transform: scale(1); }
-            20% { opacity: 0; transform: scale(1.5); }
-        }
-
-        .spark {
+        /* Cuadrícula técnica (Grid) */
+        .cyber-grid {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #f97316;
-            border-radius: 50%;
-            filter: blur(1px);
-            box-shadow: 0 0 10px #f97316, 0 0 20px #f97316;
+            inset: 0;
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(234, 88, 12, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(234, 88, 12, 0.05) 1px, transparent 1px);
+            z-index: 0;
+            pointer-events: none;
         }
 
-        /* Efecto de parpadeo de pantalla (cortocircuito) */
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-            20%, 24%, 55% { opacity: 0.7; filter: contrast(150%) brightness(1.2); }
+        /* Efecto de líneas de escaneo de monitor antiguo */
+        .scanlines {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 50%);
+            background-size: 100% 4px;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.6;
         }
 
-        .flicker-overlay {
-            animation: flicker 5s infinite;
+        /* Contenedor HUD con esquinas cortadas (Clip-path) */
+        .cyber-box {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+            border: 1px solid rgba(234, 88, 12, 0.3);
+            /* Recorte de esquinas típico cibernético */
+            clip-path: polygon(
+                0 0, 
+                calc(100% - 40px) 0, 
+                100% 40px, 
+                100% 100%, 
+                40px 100%, 
+                0 calc(100% - 40px)
+            );
+            box-shadow: 0 0 20px rgba(234, 88, 12, 0.1) inset;
         }
 
-        .glitch-text {
-            font-family: 'Syncopate', sans-serif;
-            text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+        /* Decoración de las esquinas del HUD */
+        .cyber-box::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            border-top: 3px solid #f97316;
+            border-right: 3px solid #f97316;
+            width: 30px; height: 30px;
+        }
+        .cyber-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            border-bottom: 3px solid #f97316;
+            border-left: 3px solid #f97316;
+            width: 30px; height: 30px;
+        }
+
+        /* Tipografía y brillos */
+        .title-cyber {
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 8px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Animación del cursor de la terminal */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: #f97316;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Botón cibernético */
+        .cyber-btn {
+            position: relative;
+            display: inline-block;
+            background: transparent;
+            color: #f97316;
+            border: 1px solid #f97316;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        }
+        
+        .cyber-btn:hover {
+            background: rgba(249, 115, 22, 0.2);
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.5) inset;
+            text-shadow: 0 0 8px #f97316;
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen">
+<body class="min-h-screen flex items-center justify-center p-4">
 
-    <div class="flicker-overlay absolute inset-0 pointer-events-none"></div>
+    <!-- Efectos de fondo -->
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
 
-    <div class="wire-container relative mb-12">
-        <div class="w-2 h-32 bg-zinc-800 mx-auto rounded-b-full shadow-lg relative">
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-zinc-700 rounded-full"></div>
-        </div>
+    <!-- Contenedor Principal HUD -->
+    <div class="cyber-box max-w-3xl w-full p-10 md:p-16 relative">
         
-        <div class="text-8xl mt-[-20px] relative z-10">
-            🦦 <div class="absolute -bottom-2 -right-4 text-2xl rotate-12">⚡</div>
+        <!-- Elementos de interfaz pequeños -->
+        <div class="absolute top-4 left-4 text-xs tracking-[0.2em] opacity-50">SYS.ERR // TRS_NET</div>
+        <div class="absolute bottom-4 right-4 text-xs tracking-[0.2em] opacity-50">SECTOR_404</div>
+
+        <!-- Decoración lateral de código de barras -->
+        <div class="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-1 opacity-30">
+            <div class="w-1 h-8 bg-orange-600"></div>
+            <div class="w-1 h-3 bg-orange-600"></div>
+            <div class="w-1 h-12 bg-orange-600"></div>
+            <div class="w-1 h-4 bg-orange-600"></div>
+            <div class="w-1 h-6 bg-orange-600"></div>
         </div>
 
-        <div class="mt-[-10px] flex justify-center gap-1">
-            <div class="w-1 h-8 bg-orange-500 rounded-full blur-[1px] animate-pulse"></div>
-            <div class="w-1 h-6 bg-blue-400 rounded-full blur-[1px] animate-bounce"></div>
-        </div>
+        <div class="text-center sm:text-left sm:pl-12">
+            <!-- Título 404 -->
+            <h1 class="title-cyber text-8xl md:text-[140px] font-bold text-orange-500 leading-none mb-2">
+                404
+            </h1>
+            
+            <h2 class="text-xl md:text-3xl text-orange-300 tracking-[0.3em] uppercase mb-8 border-b border-orange-500/30 pb-4 inline-block">
+                Enlace Desconocido
+            </h2>
 
-        <div id="spark-container" class="absolute bottom-0 left-1/2 w-full h-full"></div>
+            <!-- Terminal de texto -->
+            <div class="bg-black/50 border border-orange-900/50 p-4 rounded mb-10 text-sm md:text-base text-left text-orange-400">
+                <p>>_ IDENTIFICANDO ERROR...</p>
+                <p>>_ NODO DE DESTINO NO ENCONTRADO</p>
+                <p>>_ INTENTO DE RECONEXIÓN CON TRS NET... <span class="text-red-500">FALLIDO</span></p>
+                <p class="mt-2 text-orange-200">>_ REQUIERE INTERVENCIÓN MANUAL<span class="cursor"></span></p>
+            </div>
+
+            <!-- Botón de acción -->
+            <a href="/" class="cyber-btn px-8 py-4 font-bold">
+                [ INICIAR REINICIO DEL SISTEMA ]
+            </a>
+        </div>
     </div>
 
-    <div class="text-center px-6">
-        <h1 class="glitch-text text-6xl md:text-8xl font-black text-orange-500 mb-4">404</h1>
-        <h2 class="text-xl md:text-2xl font-bold uppercase tracking-widest mb-2">Conexión interrumpida</h2>
-        <p class="text-zinc-500 max-w-md mx-auto mb-8">
-            Parece que nuestra mascota digital ha confundido el cable de datos con un snack. 
-            Estamos intentando sobornarlo con gigas extra para que lo suelte.
-        </p>
-
-        <a href="https://trsnetspain/web/" class="group relative inline-block px-8 py-3 font-bold text-orange-500 border-2 border-orange-500 hover:bg-orange-500 hover:text-black transition-all duration-300 rounded-lg">
-            REPARAR CONEXIÓN (INICIO)
-            <div class="absolute -inset-1 bg-orange-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </a>
-    </div>
-
-    <script>
-        // Crear chispas aleatorias
-        const container = document.getElementById('spark-container');
-        
-        function createSpark() {
-            const spark = document.createElement('div');
-            spark.className = 'spark';
-            
-            // Posición aleatoria cerca de la punta del cable
-            const x = (Math.random() - 0.5) * 40;
-            const y = Math.random() * 20;
-            
-            spark.style.left = `${x}px`;
-            spark.style.top = `${y}px`;
-            spark.style.animation = `spark ${0.2 + Math.random() * 0.3}s linear forwards`;
-            
-            container.appendChild(spark);
-            
-            setTimeout(() => {
-                spark.remove();
-            }, 500);
-        }
-
-        // Intervalo de chispas irregular para que parezca real
-        setInterval(() => {
-            if (Math.random() > 0.4) {
-                createSpark();
-                if (Math.random() > 0.8) createSpark(); // Ráfaga doble
-            }
-        }, 150);
-    </script>
 </body>
 </html>
